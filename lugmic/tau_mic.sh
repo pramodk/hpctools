@@ -3,6 +3,9 @@
 
 module load icc impi
 
+#pdt
+./configure -ICPC -prefix=/users/kumbhar/workarena/softwares/install/x86/pdt/
+
 #on mic
 ./configure -arch=mic_linux -cc=mpiicc -c++=mpiicpc     -prefix=/users/kumbhar/workarena/softwares/install/mic/tau_mpi_pdt_opari  -iowrapper -pdt=/users/kumbhar/workarena/softwares/install/mic/pdt -pdt_c++=mpiicpc  -mpi -mpiinc=/apps/dommic/intel/impi/4.1.3.048/mic/include -mpilib=/apps/dommic/intel/impi/4.1.3.048/mic/lib  -papi=/users/kumbhar/papi-5.3.0/mic 
 
