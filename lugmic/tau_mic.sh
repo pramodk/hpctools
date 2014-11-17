@@ -68,7 +68,7 @@ do
 
 
         pdt)
-            #wget http://www.cs.uoregon.edu/research/paracomp/pdtoolkit/Download/pdt_latest.tar.gz
+            wget http://www.cs.uoregon.edu/research/paracomp/pdtoolkit/Download/pdt_latest.tar.gz
             tar -xvzf pdt_latest.tar.gz
             cd pdtoolkit-3.20
 
@@ -79,11 +79,11 @@ do
             ;;
 
         tau)
-            #wget http://www.cs.uoregon.edu/research/paracomp/tau/tauprofile/dist/tau_latest.tar.gz
-            #tar -xvzf tau_latest.tar.gz
+            wget http://www.cs.uoregon.edu/research/paracomp/tau/tauprofile/dist/tau_latest.tar.gz
+            tar -xvzf tau_latest.tar.gz
             cd tau-2.24
 
-            ./configure -prefix=$TAU_INSTALL_DIR -arch=mic_linux -cc=mpiicc -c++=mpiicpc -iowrapper -pdt=$PDT_INSTALL_DIR -pdt_c++=mpiicpc -mpi
+            ./configure -prefix=$TAU_INSTALL_DIR -arch=mic_linux -cc=mpiicc -c++=mpiicpc -iowrapper -pdt=$PDT_INSTALL_DIR -pdt_c++=mpiicpc -mpi -openmp -opari -mpiinc=/opt/intel/impi/4.1.2.040/mic/include -mpilib=/opt/intel/impi/4.1.2.040/mic/lib -mpilibrary=-lmpi_mt
 
             make -j12
             make install
